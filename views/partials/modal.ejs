@@ -1,0 +1,57 @@
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Result</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <form class="" action="/teacher/studentinfo" method="post">
+          <input type="hidden" name="candidateId" value="1">
+          <div class="form-group">
+            <label for="mathsmarks">Maths</label>
+            <input class="form-control" type="text" name="mathsmarks" plcaceholder="Enter marks out of 100" value="">
+          </div>
+          <div class="form-group">
+            <label for="physicsmarks">Physics</label>
+            <input class="form-control" type="text" name="physicsmarks" plcaceholder="Enter marks out of 100" value="">
+          </div>
+          <div class="form-group">
+            <label for="chemistrymarks">Chemistry</label>
+            <input class="form-control" type="text" name="chemistrymarks" plcaceholder="Enter marks out of 100" value="">
+          </div>
+          <div class="form-group">
+            <label for="remarks">Remarks</label>
+            <input class="form-control" type="text" name="remarks" value="">
+          </div>
+          <div id="liveAlertPlaceholder"></div>
+          <button type="submit" class="btn btn-primary" id="liveAlertBtn">Save</button>
+
+        <script>
+          var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        var alertTrigger = document.getElementById('liveAlertBtn')
+
+        function alert(message, type) {
+          var wrapper = document.createElement('div')
+          wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+          alertPlaceholder.append(wrapper)
+        }
+
+        if (alertTrigger) {
+          alertTrigger.addEventListener('click', function () {
+            alert('Saved', 'success')
+          })
+        }
+        </script>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

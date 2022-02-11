@@ -1,0 +1,18 @@
+<%-include("partials/header")-%>
+
+<div class="centered">
+  <h1>Welcome Abord</h1>
+  <h2>Tell Us Who Are You?</h2>
+  <div class="container">
+    <form class="form" action="/login/student" method="get">
+        <button class="btn btn-lg btn-dark" type="submit" name="button" value="student">Im a Student</button>
+    </form>
+    <form class="form" action="/login/teacher" method="get">
+        <button class="btn btn-lg btn-dark" type="submit" name="button" value="teacher" >Im a Teacher</button>
+    </form>
+  </div>
+
+
+</div>
+
+<%-include("partials/footer")-%>

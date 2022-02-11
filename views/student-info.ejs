@@ -1,0 +1,89 @@
+<%-include("partials/header")-%>
+
+  <%-include("partials/sidebar",{task:"Students",desig:"teacher",rendeertask:"studentinfo"}) -%>
+
+<div class="float-child">
+
+  <div class="content" id="students">
+  <h1>Students</h1>
+
+  <table >
+<tr>
+<th>Roll No.</th>
+<th>Name</th>
+<th>Email</th>
+<th>Role</th>
+<th>Result</th>
+</tr>
+
+<% students.forEach(function(user){ %>
+  <tr>
+  <td><%=user.id%></td>
+  <td><%=user.name%></td>
+  <td><%=user.email%></td>
+  <td>Student</td>
+  <td><button class="btn btn-sm btn-dark" type="button" data-bs-toggle="modal" href="#modal<%=user.id%>" name="button">Declare</button></td>
+<td>
+  <div class="modal fade" id="modal<%=user.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Result</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+          <form class="" action="/teacher/studentinfo" method="post">
+            <input type="hidden" name="candidateId" value="<%=user.id%>">
+            <input type="hidden" name="candidateName" value="<%=user.name%>">
+            <input type="hidden" name="candidateEmail" value="<%=user.email%>">
+            <div class="form-group">
+              <label for="mathsmarks">Maths</label>
+              <input class="form-control" type="text" name="mathsmarks" plcaceholder="Enter marks out of 100" value="">
+            </div>
+            <div class="form-group">
+              <label for="physicsmarks">Physics</label>
+              <input class="form-control" type="text" name="physicsmarks" plcaceholder="Enter marks out of 100" value="">
+            </div>
+            <div class="form-group">
+              <label for="chemistrymarks">Chemistry</label>
+              <input class="form-control" type="text" name="chemistrymarks" plcaceholder="Enter marks out of 100" value="">
+            </div>
+            <div class="form-group">
+              <label for="remarks">Remarks</label>
+              <input class="form-control" type="text" name="remarks" value="">
+            </div>
+            <div id="liveAlertPlaceholder"></div>
+            <button type="submit" class="btn btn-primary" id="liveAlertBtn">Save</button>
+
+          <script>
+            var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+          var alertTrigger = document.getElementById('liveAlertBtn')
+
+          function alert(message, type) {
+            var wrapper = document.createElement('div')
+            wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+            alertPlaceholder.append(wrapper)
+          }
+
+          if (alertTrigger) {
+            alertTrigger.addEventListener('click', function () {
+              alert('Saved', 'success')
+            })
+          }
+          </script>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div></td>
+  </tr>
+<%})%>
+
+</table>
+  </div>
+</div>
+
+<%-include("partials/footer")-%>

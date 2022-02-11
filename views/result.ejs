@@ -1,0 +1,53 @@
+<%-include("partials/header")-%>
+  <%-include("partials/sidebar",{task:"Result",desig:"student",rendeertask:"result"}) -%>
+  <div class="float-child">
+
+    <div class="content" id="students">
+    <h1>Result</h1>
+
+    <table class="Result">
+  <tr>
+  <th>Subject Code</th>
+  <th>Subjects</th>
+  <th>Obtained Marks</th>
+  <th>Total Marks</th>
+  <th>Percentage</th>
+  </tr>
+  <tr>
+  <td>01</td>
+  <td>Maths</td>
+  <td><%=mathsmarks%></td>
+  <td>100</td>
+  <td><%=mper%></td>
+
+  </tr>
+  <tr>
+  <td>02</td>
+  <td>Physics</td>
+  <td><%=physicsmarks%></td>
+  <td>100</td>
+  <td><%=pper%></td>
+
+  </tr>
+  <tr>
+  <td>03</td>
+  <td>Chemistry</td>
+  <td><%=chemistrymarks%></td>
+  <td>100</td>
+  <td><%=cper%></td>
+
+  </tr>
+<tr>
+<td colspan="5" class="final">Overall Percentage: <%=totalpercentage%></td>
+</tr>
+<tr>
+  <td colspan="5" class="final">Pass/Fail: <%=message%> </td>
+</tr>
+<tr>
+  <td colspan="5" class="final">Remarks: <%=remarks%> </td>
+</tr>
+
+  </table>
+    </div>
+  </div>
+<%-include("partials/footer")-%>

@@ -1,0 +1,30 @@
+<%-include("partials/header")-%>
+
+
+
+<div class="float-container">
+
+  <%-include("partials/sidebar",{task:"Result",desig:"student",rendeertask:"result"}) -%>
+   <div class="float-child">
+     <div class="content " id="profile" >
+     <h1>Profile</h1>
+     <table >
+<tr>
+  <th>Roll No.</th>
+  <th>Name</th>
+  <th>Email</th>
+  <th>Role</th>
+</tr>
+<tr>
+  <td><%= studentId %></td>
+  <td><%= studentName %></td>
+  <td><%= studentEmail %></td>
+<td>Student</td>
+</tr>
+</table>
+     </div>
+   </div>
+
+
+</div>
+<%-include("partials/footer")-%>

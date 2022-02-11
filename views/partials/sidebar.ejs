@@ -1,0 +1,23 @@
+
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark dashboard  " >
+
+     <span class="fs-4">Dashboard</span>
+   <hr>
+   <ul class="nav nav-pills flex-column mb-auto">
+     <li class="nav-item">
+       <a href="/<%= desig %>/profile" class="nav-link text-white" aria-current="page">
+       Profile
+       </a>
+     </li>
+     <li>
+       <a href="/<%= desig %>/<%= rendeertask %>" class="nav-link text-white">
+         <%= task %>
+       </a>
+     </li>
+     <li class="nav-item">
+       <a href="/logout" class="nav-link text-white" aria-current="page">
+       Logout
+       </a>
+     </li>
+   </ul>
+</div>
